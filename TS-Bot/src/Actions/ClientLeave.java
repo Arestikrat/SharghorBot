@@ -11,48 +11,51 @@ import com.github.theholywaffle.teamspeak3.api.wrapper.Client;
 import Server.Bot;
 
 public class ClientLeave {
-	
+
 	private ClientLeaveEvent event;
 	private TS3Api api;
-	
+
 	public ClientLeave(ClientLeaveEvent event, TS3Api api) {
 		this.event = event;
 		this.api = api;
 	}
 
-	
+
 	public void Supportleave() {
-		
-		
+
+
 		HashMap<ChannelProperty, String> options = new HashMap<>();
 		int i = 0;
-		
+
 		for(Client clients : api.getClients()){
 			if(clients.isInServerGroup(50) || clients.isInServerGroup(52) || clients.isInServerGroup(9)){
 				i++;
-			}					
+			}
 		}
 		if(i >= 2 ){
 			for(Channel channels : api.getChannels()){
 
-					
-				if(channels.getId() == 81 && channels.getName().equals("[cspacer102]–––•( Support - Closed)•–––")){
-					
-					options.put(ChannelProperty.CHANNEL_NAME, "[cspacer102]–––•( Support - Open)•–––");
+
+				if(channels.getId() == 81 && channels.getName().equals("[cspacer102]ï¿½ï¿½ï¿½ï¿½( Support - Closed)ï¿½ï¿½ï¿½ï¿½")){
+
+					options.put(ChannelProperty.CHANNEL_NAME, "[cspacer102]ï¿½ï¿½ï¿½ï¿½( Support - Open)ï¿½ï¿½ï¿½ï¿½");
 					api.editChannel(81, options);
 				}
 			}
-			
+
 		}else{
 			for(Channel channels : api.getChannels()){
-				if(channels.getId() == 81 && channels.getName().equals("[cspacer102]–––•( Support - Open)•–––")){
-					
-					options.put(ChannelProperty.CHANNEL_NAME, "[cspacer102]–––•( Support - Closed)•–––");
+				if(channels.getId() == 81 && channels.getName().equals("[cspacer102]ï¿½ï¿½ï¿½ï¿½( Support - Open)ï¿½ï¿½ï¿½ï¿½")){
+
+					options.put(ChannelProperty.CHANNEL_NAME, "[cspacer102]ï¿½ï¿½ï¿½ï¿½( Support - Closed)ï¿½ï¿½ï¿½ï¿½");
 					api.editChannel(81, options);
 				}
 			}
 		}
 	}
-	
-	
+
+
 }
+
+
+// Test Comment
