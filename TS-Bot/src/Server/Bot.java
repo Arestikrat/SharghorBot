@@ -66,6 +66,7 @@ public class Bot {
 		System.out.println("");
 		
 		System.out.println("TS-Bot "+this.name+" activated.");
+		System.out.println("Thanks for using!");
 	}
 	
 }
